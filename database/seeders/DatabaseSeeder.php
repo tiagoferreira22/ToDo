@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]); */
 
-        User::factory(10)->create();
-        Category::factory(100)->create();
-        Task::factory(30)->create();
+        User::factory(40)->create();
+        Category::factory(30)->create();
+        Task::factory(100)->create();
     }
 }

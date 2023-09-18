@@ -26,7 +26,7 @@ class Task extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function catefory()
+    public function category()
     {
         /* belongsTo => pertence a um */
         return $this->belongsTo(Category::class);
