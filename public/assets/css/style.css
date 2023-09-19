@@ -10,13 +10,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
-    color: var(--text-dark)
 }
 
 body{
     width: 100vw;
     height: 100vh;
     background: var(--background-white);
+    color: var(--text-dark);
 }
 
 .container{
@@ -30,6 +30,9 @@ body{
     background: var(--color-primary);
 }
 
+.sidebar img{
+    max-width: 90%;
+}
 nav{
     height: 100px;
     background: var(--background-light);
@@ -43,12 +46,14 @@ nav{
 .btn{
     padding: 15px 25px;
     border-radius: 10px;
-
-}
-
-a.btn{
     text-decoration: none;
+    transition: all .5s ease-in-out;
 }
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
 .btn-primary{
     background: var(--color-primary);
     color: #ffffff;
@@ -57,44 +62,75 @@ a.btn{
 
 main{
     display: flex;
-    padding: 20px;
+
+    padding: 0;
 }
 
 section.graph{
     width: 33%;
     height: 100%;
-    padding: 5px;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .graph_header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px;
 }
 
-.graph_header hr{
-    width: 70px;
-    display: inline-block;
+.graph_header h2{
+    font-size: 18px;
+}
+
+.graph_header_line{
+    width: 110px;
+    height: 2px;
+    background: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph_header_date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.graph_header_date svg{
+    color: #6143FF;
 }
 
 .graph_header_subtitle{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
     margin-top: 10px;
 }
 
 .graph_placeholder{
-    background: #ccc;
     width: 300px;
     height: 300px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 50px;
+    background: url(../imgs/graph.png);
+    background-size: contain;
 }
 
-.graph_header_tasks_left{
-    text-align: center;
-
+.tasks_left_footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
 }
 .list{
-    padding: 5px 15px;
+    padding: 20px 20px 0 20px;
     flex: 1;
 }
 
@@ -103,13 +139,78 @@ section.graph{
 }
 
 .list_header_select{
-
+    background: transparent;
+    border: 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--text-dark);
 }
 
 .task_list{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: teal;
     margin-top: 20px;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    margin-bottom: 10px;
+    transition: .5s ;
+    border-bottom:1px solid var(--background-light) ;
+}
+
+.task:hover{
+    transform: scale(1.01);
+    border-radius: 10px;
+    background: var(--background-light);
+}
+
+.task .title{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.task .priority,
+.task .actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+
+.actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 10px;
+}
+
+.actions a{
+    transition: .5s;
+}
+.actions a svg{
+    width: 25px;
+    height: 25px;
+    color: #a9a9ad !important;
+}
+.actions a:hover{
+    transform: scale(1.2);
+}
+
+.sphere{
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.task .task_title{
+    padding-left: 10px;
+    font-weight: bold;
 }
