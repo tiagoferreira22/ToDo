@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout urlNavbar="{{route('task.create')}}" nameBtnNavbar="Criar Tarefa">
     <section class="graph">
         <div class="graph_header">
             <h2>Progresso do Dia</h2>
@@ -36,26 +36,10 @@
         </div>
 
         <div class="task_list">
-            @php
-                $tasks = [
-                    [
-                        'done' => false,
-                        'title' => 'minha primeira ..',
-                        'category' => 'categoria 1'
-                    ],
-                    [
-                        'done' => true,
-                        'title' => 'minha segunda ..',
-                        'category' => 'categoria 2'
-                    ],
-                    [
-                        'done' => false,
-                        'title' => 'minha terceira ..',
-                        'category' => 'categoria 2'
-                    ],
-                ]
-            @endphp
-            <x-task :data=$tasks[0]/>
+
+            @foreach ($tasks as $task)
+                <x-task :data=$task/>
+            @endforeach
         </div>
     </section>
 </x-layout>

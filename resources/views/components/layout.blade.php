@@ -1,3 +1,4 @@
+@props(['urlNavbar', 'nameBtnNavbar'])
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,7 +23,9 @@
         <x-sidebar></x-sidebar>
 
         <div class="content">
-            <x-navbar></x-navbar>
+            @if (!empty($urlNavbar) && !empty($nameBtnNavbar))
+                <x-navbar url="{{$urlNavbar}}" nameContent="{{$nameBtnNavbar}}"></x-navbar>
+            @endif
             <main>
                 {{$slot}}
             </main>
