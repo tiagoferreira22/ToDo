@@ -14,7 +14,7 @@ Route::controller(HomeController::class)->group(function () {
 Route::controller(TaskController::class)->group(function () {
     Route::get('/task/new/', 'create')->name('task.create');
     Route::get('/task/edit/{id}', 'edit')->name('task.edit');
-    Route::get('/task/delete/', 'destroy')->name('task.destroy');
+    Route::get('/task/delete/{id}', 'destroy')->name('task.destroy');
     Route::get('/task/', 'view')->name('task.view');
 });
 

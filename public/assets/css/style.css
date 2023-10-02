@@ -214,3 +214,8 @@ section.graph{
     padding-left: 10px;
     font-weight: bold;
 }
+
+#create_task_section{
+    margin: auto;
+    padding-top: 20px;
+}
